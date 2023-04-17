@@ -23,7 +23,7 @@ abstract class EmployeeDatabase: RoomDatabase() {
                         context.applicationContext,
                         EmployeeDatabase::class.java,
                         "employee_database"
-                    ).fallbackToDestructiveMigration().build()
+                    ).allowMainThreadQueries().build()
 
                     INSTANCE = instance
                 }

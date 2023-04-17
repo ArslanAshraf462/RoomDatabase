@@ -1,22 +1,18 @@
 package com.example.roomdemo
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EmployeeDAO {
-    @Insert
-    suspend fun insert(employeeEntity: EmployeeEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+     fun insert(employeeEntity: EmployeeEntity)
 
     @Update
-    suspend fun update(employeeEntity: EmployeeEntity)
+     fun update(employeeEntity: EmployeeEntity)
 
     @Delete
-    suspend fun delete(employeeEntity: EmployeeEntity)
+     fun delete(employeeEntity: EmployeeEntity)
 
     @Query("SELECT * FROM `employee-table`")
     fun fetchAllEmployee() : Flow<List<EmployeeEntity>>
