@@ -37,7 +37,7 @@
         />
     
     <ImageView
-        android:id="@+id/tvEdit"
+        android:id="@+id/ivEdit"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:contentDescription="image"
@@ -47,7 +47,7 @@
         />
 
     <ImageView
-        android:id="@+id/tvDelete"
+        android:id="@+id/ivDelete"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:contentDescription="image"
